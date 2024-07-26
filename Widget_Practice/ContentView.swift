@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  WidgetPractice
+//  Widget_Practice
 //
 //  Created by 최주리 on 7/26/24.
 //
