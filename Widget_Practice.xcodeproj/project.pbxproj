@@ -19,6 +19,7 @@
 		CB2E9C1B2C539D6E007D0B9B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C1A2C539D6E007D0B9B /* AppIntent.swift */; };
 		CB2E9C1D2C539D6F007D0B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2E9C1C2C539D6F007D0B9B /* Assets.xcassets */; };
 		CB2E9C212C539D6F007D0B9B /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB2E9C0D2C539D6E007D0B9B /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB2E9C292C57C8B7007D0B9B /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C272C57BF63007D0B9B /* TextModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		CB2E9C1A2C539D6E007D0B9B /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		CB2E9C1C2C539D6F007D0B9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB2E9C1E2C539D6F007D0B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2E9C272C57BF63007D0B9B /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		CB2E9C132C539D6E007D0B9B /* MyWidget */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E9C272C57BF63007D0B9B /* TextModel.swift */,
 				CB2E9C142C539D6E007D0B9B /* MyWidgetBundle.swift */,
 				CB2E9C162C539D6E007D0B9B /* MyWidgetLiveActivity.swift */,
 				CB2E9C182C539D6E007D0B9B /* MyWidget.swift */,
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB2E9C172C539D6E007D0B9B /* MyWidgetLiveActivity.swift in Sources */,
+				CB2E9C292C57C8B7007D0B9B /* TextModel.swift in Sources */,
 				CB2E9C1B2C539D6E007D0B9B /* AppIntent.swift in Sources */,
 				CB2E9C152C539D6E007D0B9B /* MyWidgetBundle.swift in Sources */,
 				CB2E9C192C539D6E007D0B9B /* MyWidget.swift in Sources */,

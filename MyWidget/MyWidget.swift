@@ -10,31 +10,46 @@ import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+        SimpleEntry(date: Date(), texts: ["Empty"])
     }
-
+    
+    
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+        SimpleEntry(date: Date(), texts: ["Empty"])
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
+        
+        do {
+            let texts = try await getTexts()
+            let currentDate = Date()
+            let entry = SimpleEntry(date: currentDate, texts: texts)
+            let nextRefresh = Calendar.current.date(byAdding: .second, value: 30, to: currentDate)!
+            let timeline = Timeline(entries: [entry], policy: .after(nextRefresh))
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+            return timeline
+        } catch {
+            print("error!!!!!\(error)")
         }
-
-        return Timeline(entries: entries, policy: .atEnd)
+        
+        return Timeline(entries: [], policy: .atEnd)
+    }
+    
+    func getTexts() async throws -> [String] {
+        guard let url = URL(string: "https://meowfacts.herokuapp.com/?count=1") else { return ["error"] }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse else { return ["error"]}
+        let result = try JSONDecoder().decode(TextModel.self, from: data)
+        
+        return result.data
+        
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationAppIntent
+    let texts: [String]
 }
 
 struct MyWidgetEntryView : View {
@@ -42,11 +57,11 @@ struct MyWidgetEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+            ForEach(entry.texts, id: \.self) { text in
+                Text(text)
+                    .lineLimit(1)
+                Divider()
+            }
         }
     }
 }
@@ -59,26 +74,14 @@ struct MyWidget: Widget {
             MyWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .configurationDisplayName("위젯 예제")
+        .description("랜덤 텍스트를 불러오는 위젯")
     }
 }
 
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
-}
-
-#Preview(as: .systemSmall) {
-    MyWidget()
-} timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
-}
+//#Preview(as: .systemSmall) {
+//    MyWidget()
+//} timeline: {
+//    SimpleEntry(date: .now, configuration: .smiley)
+//    SimpleEntry(date: .now, configuration: .starEyes)
+//}
