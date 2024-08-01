@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.deepLinkText) var deepLinkText: String
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if deepLinkText.isEmpty {
+                Text("hello world")
+            } else {
+                Text(deepLinkText)
+            }
         }
         .padding()
     }

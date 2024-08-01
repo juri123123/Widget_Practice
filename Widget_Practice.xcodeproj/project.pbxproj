@@ -20,6 +20,8 @@
 		CB2E9C1D2C539D6F007D0B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2E9C1C2C539D6F007D0B9B /* Assets.xcassets */; };
 		CB2E9C212C539D6F007D0B9B /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB2E9C0D2C539D6E007D0B9B /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB2E9C292C57C8B7007D0B9B /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C272C57BF63007D0B9B /* TextModel.swift */; };
+		CB2E9C2B2C5BBF65007D0B9B /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C2A2C5BBF65007D0B9B /* DeepLink.swift */; };
+		CB2E9C2D2C5BC070007D0B9B /* EnvironmentValues+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C2C2C5BC070007D0B9B /* EnvironmentValues+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		CB2E9C1C2C539D6F007D0B9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB2E9C1E2C539D6F007D0B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB2E9C272C57BF63007D0B9B /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		CB2E9C2A2C5BBF65007D0B9B /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
+		CB2E9C2C2C5BC070007D0B9B /* EnvironmentValues+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				CB2E9BFD2C539D39007D0B9B /* ContentView.swift */,
 				CB2E9BFF2C539D3A007D0B9B /* Assets.xcassets */,
 				CB2E9C012C539D3A007D0B9B /* Preview Content */,
+				CB2E9C2A2C5BBF65007D0B9B /* DeepLink.swift */,
+				CB2E9C2C2C5BC070007D0B9B /* EnvironmentValues+Extension.swift */,
 			);
 			path = Widget_Practice;
 			sourceTree = "<group>";
@@ -246,8 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2E9C2B2C5BBF65007D0B9B /* DeepLink.swift in Sources */,
 				CB2E9BFE2C539D39007D0B9B /* ContentView.swift in Sources */,
 				CB2E9BFC2C539D39007D0B9B /* Widget_PracticeApp.swift in Sources */,
+				CB2E9C2D2C5BC070007D0B9B /* EnvironmentValues+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

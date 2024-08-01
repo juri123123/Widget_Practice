@@ -60,9 +60,14 @@ struct MyWidgetEntryView : View {
             ForEach(entry.texts, id: \.self) { text in
                 Text(text)
                     .lineLimit(1)
+                    .widgetURL(URL(string: getURL("widget://deeplink?text=\(text)")))
                 Divider()
             }
         }
+    }
+    
+    private func getURL(_ string: String) -> String {
+        string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
     }
 }
 
