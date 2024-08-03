@@ -19,9 +19,14 @@
 		CB2E9C1B2C539D6E007D0B9B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C1A2C539D6E007D0B9B /* AppIntent.swift */; };
 		CB2E9C1D2C539D6F007D0B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2E9C1C2C539D6F007D0B9B /* Assets.xcassets */; };
 		CB2E9C212C539D6F007D0B9B /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB2E9C0D2C539D6E007D0B9B /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CB2E9C292C57C8B7007D0B9B /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C272C57BF63007D0B9B /* TextModel.swift */; };
 		CB2E9C2B2C5BBF65007D0B9B /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C2A2C5BBF65007D0B9B /* DeepLink.swift */; };
 		CB2E9C2D2C5BC070007D0B9B /* EnvironmentValues+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C2C2C5BC070007D0B9B /* EnvironmentValues+Extension.swift */; };
+		CB2E9C402C5E7343007D0B9B /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C3F2C5E7343007D0B9B /* PhotoModel.swift */; };
+		CB2E9C412C5E7343007D0B9B /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C3F2C5E7343007D0B9B /* PhotoModel.swift */; };
+		CB2E9C432C5E738F007D0B9B /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C422C5E738F007D0B9B /* TextModel.swift */; };
+		CB2E9C442C5E738F007D0B9B /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C422C5E738F007D0B9B /* TextModel.swift */; };
+		CB2E9C462C5E793D007D0B9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C452C5E793D007D0B9B /* ImageCache.swift */; };
+		CB2E9C472C5E793D007D0B9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9C452C5E793D007D0B9B /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +68,11 @@
 		CB2E9C1A2C539D6E007D0B9B /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		CB2E9C1C2C539D6F007D0B9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB2E9C1E2C539D6F007D0B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB2E9C272C57BF63007D0B9B /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
 		CB2E9C2A2C5BBF65007D0B9B /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		CB2E9C2C2C5BC070007D0B9B /* EnvironmentValues+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extension.swift"; sourceTree = "<group>"; };
+		CB2E9C3F2C5E7343007D0B9B /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		CB2E9C422C5E738F007D0B9B /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		CB2E9C452C5E793D007D0B9B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +123,9 @@
 				CB2E9C012C539D3A007D0B9B /* Preview Content */,
 				CB2E9C2A2C5BBF65007D0B9B /* DeepLink.swift */,
 				CB2E9C2C2C5BC070007D0B9B /* EnvironmentValues+Extension.swift */,
+				CB2E9C3F2C5E7343007D0B9B /* PhotoModel.swift */,
+				CB2E9C422C5E738F007D0B9B /* TextModel.swift */,
+				CB2E9C452C5E793D007D0B9B /* ImageCache.swift */,
 			);
 			path = Widget_Practice;
 			sourceTree = "<group>";
@@ -140,7 +150,6 @@
 		CB2E9C132C539D6E007D0B9B /* MyWidget */ = {
 			isa = PBXGroup;
 			children = (
-				CB2E9C272C57BF63007D0B9B /* TextModel.swift */,
 				CB2E9C142C539D6E007D0B9B /* MyWidgetBundle.swift */,
 				CB2E9C162C539D6E007D0B9B /* MyWidgetLiveActivity.swift */,
 				CB2E9C182C539D6E007D0B9B /* MyWidget.swift */,
@@ -252,9 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2E9C402C5E7343007D0B9B /* PhotoModel.swift in Sources */,
 				CB2E9C2B2C5BBF65007D0B9B /* DeepLink.swift in Sources */,
+				CB2E9C432C5E738F007D0B9B /* TextModel.swift in Sources */,
 				CB2E9BFE2C539D39007D0B9B /* ContentView.swift in Sources */,
 				CB2E9BFC2C539D39007D0B9B /* Widget_PracticeApp.swift in Sources */,
+				CB2E9C462C5E793D007D0B9B /* ImageCache.swift in Sources */,
 				CB2E9C2D2C5BC070007D0B9B /* EnvironmentValues+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,9 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB2E9C172C539D6E007D0B9B /* MyWidgetLiveActivity.swift in Sources */,
-				CB2E9C292C57C8B7007D0B9B /* TextModel.swift in Sources */,
 				CB2E9C1B2C539D6E007D0B9B /* AppIntent.swift in Sources */,
+				CB2E9C442C5E738F007D0B9B /* TextModel.swift in Sources */,
+				CB2E9C412C5E7343007D0B9B /* PhotoModel.swift in Sources */,
 				CB2E9C152C539D6E007D0B9B /* MyWidgetBundle.swift in Sources */,
+				CB2E9C472C5E793D007D0B9B /* ImageCache.swift in Sources */,
 				CB2E9C192C539D6E007D0B9B /* MyWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
