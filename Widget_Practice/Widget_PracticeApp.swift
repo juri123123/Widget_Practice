@@ -14,10 +14,10 @@ struct Widget_PracticeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.deepLinkText, text)
-                .onOpenURL { url in
-                    text = url.absoluteString.removingPercentEncoding ?? ""
-                }
+//                .environment(\.deepLinkText, text)
+//                .onOpenURL { url in
+//                    text = url.absoluteString.removingPercentEncoding ?? ""
+//                }
         }
     }
 }

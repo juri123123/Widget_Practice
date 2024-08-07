@@ -71,7 +71,6 @@ struct Provider: AppIntentTimelineProvider {
         else { return (UIImage(), "") }
         
         let (data, response) = try await URLSession.shared.data(from: url)
-        guard let httpResponse = response as? HTTPURLResponse else { return (UIImage(), "") }
         
         let model = try JSONDecoder().decode(PhotoModel.self, from: data)
         let urlString = model.items.first?.media.m
